@@ -27,3 +27,5 @@ jobs:
       run: |
           export TAG=${GITHUB_REF#refs/heads/}${GITHUB_SHA:0:8}
           echo "::set-env name=DOCKERTAG::${TAG}"
+    - name: Output tag
+      run: echo ${DOCKERTAG}
