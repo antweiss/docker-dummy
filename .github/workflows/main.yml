@@ -22,7 +22,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: |
-          export TAG=${${GITHUB_REF#refs/heads/}/\//-}${GITHUB_SHA:0:8}
+          export TAG=${${GITHUB_REF#/refs/heads/}/\//-}${GITHUB_SHA:0:8}
           echo "::set-env name=DOCKERTAG::${TAG}"
     - name: Output tag
       run: echo ${DOCKERTAG}
