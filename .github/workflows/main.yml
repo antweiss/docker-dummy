@@ -23,6 +23,7 @@ jobs:
     - name: Run a one-line script
       run: |
           export BRANCH=${GITHUB_REF#/refs/heads/}
+          echo ${BRANCH}
           export TAG=${BRANCH/\//-}${GITHUB_SHA:0:8}
           echo "::set-env name=DOCKERTAG::${TAG}"
     - name: Output tag
